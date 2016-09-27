@@ -9,7 +9,7 @@ namespace MvcContrib.TestHelper
 	internal class MockSession : HttpSessionStateBase
 	{
 		private readonly IDictionary _objects;
-
+	        private int _timeout;
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MockSession"/> class.
 		/// </summary>
@@ -187,8 +187,8 @@ namespace MvcContrib.TestHelper
 		/// </summary>
 		public override int Timeout
 		{
-			get { throw new NotImplementedException(); }
-			set { throw new NotImplementedException(); }
+		 	get { return _timeout; }
+			set { _timeout = value; }
 		}
 
 		/// <summary>
